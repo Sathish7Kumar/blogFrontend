@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-     const loginResult =  await axios.post("http://localhost:5000/login", {
+     const loginResult =  await axios.post("https://blogapi-ulcq.onrender.com/login", {
         username,
         password,
       });

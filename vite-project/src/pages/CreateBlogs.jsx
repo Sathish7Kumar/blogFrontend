@@ -9,35 +9,18 @@ const CreateBlogs = () => {
 
   const [cookie, setcookie] = useCookies(["access_token"]);
 
-//   const [blogs, setblogs] = useState([
-//     {
-//       title: "",
-//       imageUrl: "",
-//       desc: "",
-//       userOwner: userID,
-//     },
-//   ]);
 
 const [title, settitle] = useState("")
 const [imageUrl, setimageUrl] = useState("")
 const [desc, setdesc] = useState("")
 const [userOwner, setuserOwner] = useState(userID)
 
-
   const nav = useNavigate();
-
-//   const handleChange = (e) => {
-//     e.preventDefault();
-//     console.log(e);
-//     const { name, value } = e.target;
-//     setblogs({ ...blogs, [name]: value });
-//   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const resp = await axios.post(
-        "http://localhost:5000/postblog",
+        "https://blogapi-ulcq.onrender.com/postblog",
         { title,imageUrl,desc,userOwner },
         { headers: { authorization: cookie.access_token } }
       );

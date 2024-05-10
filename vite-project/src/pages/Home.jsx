@@ -6,7 +6,7 @@ const Home = () => {
 
   const fetchBlogs = async() =>{
     try {
-      const resp = await axios.get("http://localhost:5000/getBlogs")
+      const resp = await axios.get("https://blogapi-ulcq.onrender.com/getBlogs")
     setblogs(resp.data)
     } catch (error) {
       console.log(error);
